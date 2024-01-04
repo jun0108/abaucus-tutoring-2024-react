@@ -1,12 +1,20 @@
 interface NumberFormatResult {
-  originalNumber: number
-  formattedNumber: string
+  result: string
 }
 
-export default function AddComma(inputNumber: number): NumberFormatResult {
-  const formattedNumber = inputNumber.toLocaleString()
-  return {
-    originalNumber: inputNumber,
-    formattedNumber: formattedNumber,
+export default function AddComma(
+  numberValue: number | string
+): NumberFormatResult {
+  if (typeof numberValue === 'number') {
+    const change = Number(numberValue)
+    const formattedNumber = change.toLocaleString()
+
+    return {
+      result: formattedNumber,
+    }
+  } else {
+    return {
+      result: numberValue,
+    }
   }
 }
