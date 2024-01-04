@@ -1,0 +1,26 @@
+.cm-input {
+  input {
+    @apply w-full;
+    height: 40px;
+    padding: 8px 15px;
+    background: $white;
+    border: 1px solid $light-6;
+    border-radius: 5px;
+    color: $dark-1;
+    caret-color: $primary;
+    transition: $transition;
+
+    &:focus {
+      border-color: $primary;
+    }
+    &::placeholder {
+      color: $dark-6;
+    }
+    &:disabled {
+      background: $light-2;
+      border-color: $light-6;
+      color: $dark-1;
+      cursor: not-allowed;
+    }
+  }
+}
